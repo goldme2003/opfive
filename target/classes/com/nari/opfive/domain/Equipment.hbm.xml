@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-8-23 16:19:02 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="leanassessment" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nari.opfive.domain.Equipment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="equipment">
+        <id name="eid" type="int">
+            <column name="EID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="emanufacturer" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="EManufacturer" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="assessTotalScore" optimistic-lock="true" type="float" unique="false">
+            <column name="AssessTotalScore" not-null="true" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="ename" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="EName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="substationName" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="SubstationName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="emodel" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="EModel"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="tasks" optimistic-lock="true" sort="unsorted" table="task">
+            <key on-delete="noaction">
+                <column name="EID" not-null="true"/>
+            </key>
+            <one-to-many class="com.nari.opfive.domain.Task" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

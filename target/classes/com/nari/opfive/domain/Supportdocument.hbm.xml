@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-8-23 16:19:02 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="leanassessment" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nari.opfive.domain.Supportdocument" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="supportdocument">
+        <id name="suppDocId" type="int">
+            <column name="SuppDocID"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.nari.opfive.domain.Checkresult" embed-xml="true" fetch="select" insert="true" name="checkresult" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="CheckResultID" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="suppDocName" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="SuppDocName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="suppDocLocation" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="SuppDocLocation" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

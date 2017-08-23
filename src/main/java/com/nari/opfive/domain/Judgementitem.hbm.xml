@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-8-23 16:22:41 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="leanassessment" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nari.opfive.domain.Judgementitem" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="judgementitem">
+        <id name="judgeItemId" type="int">
+            <column name="JudgeItemID"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.nari.opfive.domain.Rootasseitem" embed-xml="true" fetch="select" insert="true" name="rootasseitem" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="RootAsseItemID" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="judgeItemName" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="JudgeItemName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="judgeStatement" optimistic-lock="true" type="byte" unique="false">
+            <column name="JudgeStatement" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="judgementsubitems" optimistic-lock="true" sort="unsorted" table="judgementsubitem">
+            <key on-delete="noaction">
+                <column name="JudgeItemID" not-null="true"/>
+            </key>
+            <one-to-many class="com.nari.opfive.domain.Judgementsubitem" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

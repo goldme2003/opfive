@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	</type-mapping>
+
+
+	<table-filter match-schema="leanassessment" match-name=".*" />
+	<table-filter match-name="checkmethod"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="checkresult"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="equipment"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="judgementitem"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="judgementsubitem"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="rootasseitem"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="supportdocument"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table-filter match-name="task" match-catalog="leanassessment"></table-filter>
+	<table-filter match-name="taskoperator"
+		match-catalog="leanassessment">
+	</table-filter>
+	<table catalog="leanassessment" name="checkmethod">
+		<column name="CheckMethodID"></column>
+		<column name="CheckMethodName"></column>
+		<column name="JudgeSubitemID"></column>
+	</table>
+	<table catalog="leanassessment" name="checkresult">
+		<column name="CheckResultID"></column>
+		<column name="Result"></column>
+		<column name="CheckMethodID"></column>
+		<column name="PunishScore"></column>
+	</table>
+	<table catalog="leanassessment" name="equipment">
+		<column name="EID"></column>
+		<column name="SubstationName"></column>
+		<column name="EName"></column>
+		<column name="EModel"></column>
+		<column name="AssessTotalScore"></column>
+		<column name="EManufacturer"></column>
+	</table>
+	<table catalog="leanassessment" name="judgementitem">
+		<column name="JudgeItemID"></column>
+		<column name="JudgeItemName"></column>
+		<column name="JudgeStatement"></column>
+		<column name="RootAsseItemID"></column>
+	</table>
+	<table catalog="leanassessment" name="judgementsubitem">
+		<column name="JudgeSubItemID"></column>
+		<column name="JudgeItemID"></column>
+		<column name="SubitemStatement"></column>
+		<column name="JudgeSubitemName"></column>
+	</table>
+	<table catalog="leanassessment" name="rootasseitem">
+		<column name="RootAsseItemID"></column>
+		<column name="RootAsseItemName"></column>
+		<column name="TID"></column>
+	</table>
+	<table catalog="leanassessment" name="supportdocument">
+		<column name="SuppDocID"></column>
+		<column name="CheckResultID"></column>
+		<column name="SuppDocLocation"></column>
+		<column name="SuppDocName"></column>
+	</table>
+	<table catalog="leanassessment" name="task">
+		<column name="TID"></column>
+		<column name="EID"></column>
+		<column name="TaskTime"></column>
+	</table>
+	<table catalog="leanassessment" name="taskoperator">
+		<column name="TOperatorID"></column>
+		<column name="TID"></column>
+		<column name="TOperatorName"></column>
+	</table>
+</hibernate-reverse-engineering>
