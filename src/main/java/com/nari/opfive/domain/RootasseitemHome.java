@@ -1,5 +1,5 @@
 package com.nari.opfive.domain;
-// Generated 2017-8-23 16:23:19 by Hibernate Tools 5.2.5.Final
+// Generated 2017-8-24 13:04:26 by Hibernate Tools 5.2.5.Final
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

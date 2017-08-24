@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 2017-8-23 16:22:41 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-24 13:03:49 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="leanassessment" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nari.opfive.domain.Judgementsubitem" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="judgementsubitem">
         <id name="judgeSubItemId" type="int">
@@ -10,7 +10,7 @@
             <column name="JudgeItemID" not-null="true"/>
         </many-to-one>
         <property generated="never" lazy="false" name="judgeSubitemName" optimistic-lock="true" type="string" unique="false">
-            <column length="100" name="JudgeSubitemName" not-null="true"/>
+            <column length="150" name="JudgeSubitemName" not-null="true"/>
         </property>
         <property generated="never" lazy="false" name="subitemStatement" optimistic-lock="true" type="byte" unique="false">
             <column name="SubitemStatement" not-null="true"/>

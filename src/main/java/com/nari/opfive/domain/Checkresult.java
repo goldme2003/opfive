@@ -1,5 +1,5 @@
 package com.nari.opfive.domain;
-// Generated 2017-8-23 16:22:41 by Hibernate Tools 5.2.5.Final
+// Generated 2017-8-24 13:03:49 by Hibernate Tools 5.2.5.Final
 
 import java.util.HashSet;
 import java.util.Set;
