@@ -13,13 +13,13 @@ import com.nari.opfive.service.TransformerAssessmentItemService;
 public class TransformerAssessmentItemController {
 	
 	@Autowired
-	private TransformerAssessmentItemService transAssItemServ;
+	private TransformerAssessmentItemService transAsseItemServ;
 	
 	public ModelAndView rootItemList(Model model) {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("rootitem", transAssItemServ.getPrimaryItems());
+		mav.addObject("rootitem", transAsseItemServ.getPrimaryItems());
 		mav.setViewName("/");
 		
 		
