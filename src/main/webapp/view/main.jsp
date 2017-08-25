@@ -1,88 +1,85 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Products</title>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+
+
+<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/js/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/controller.js"></script>
+<title>精益化评估系统main</title>
 </head>
 <body>
-	    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Dashboard</a>
-      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- 导航栏 -->
+	<div class="container">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark fix"
+			role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#nav-toggle">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand bg-dark" href="/">精益化评价系统</a>
+		</div>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Settings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Help</a>
-          </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
+		<div class="collapse navbar-collapse" id="nav-toggle">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">首页</a></li>
+				<li><a href="/add">登录</a></li>
+			</ul>
+			<form class="navbar-form navbar-right" role="search">
+				<input type="text" class="form-control" placeholder="通则查找">
+			</form>
+		</div>
+		</nav>
+	</div>
+	
+	<!-- 边栏 -->
+	<div class="container col-md-2">
 
-	<section class="container">
-	<div class="row">
-		<c:forEach items="${products}" var="product">
-			<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-				<div class="thumbnail">
-				<img src="<c:url value="/resource/images/${product.productId}.png"></c:url>" alt="image"  style = "width:100%"/>
-					<div class="caption">
-						<h3>${product.name}</h3>
-						<p>${product.description}</p>
-						<p>$${product.unitPrice}</p>
-						<p>Available ${product.unitsInStock} units in stock</p>
-						<p>
-							<a
-								href=" <spring:url value=  "/products/product?id=${product.productId}" /> "
-								class="btn btn-primary"> <span
-								class="glyphicon-info-sign glyphicon" /></span> Details
-							</a>
-						</p>
+		<div id="accordion" role="tablist">
+			<c:forEach items="${rootitem}" var="item">
 
+
+				<div class="card">
+					<div class="card-header" role="tab" id="headingOne">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" href="#collapseOne"
+								aria-expanded="true" aria-controls="collapseOne">
+								${item.RootAsseItemName} </a>
+						</h5>
+					</div>
+
+					<div id="item${item.RootAsseItemName}" class="collapse" role="tabpanel"
+						aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">Anim pariatur cliche reprehenderit,
+							enim eiusmod high life accusamus terry richardson ad squid. 3
+							wolf moon officia aute, non cupidatat skateboard dolor brunch.
+							Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+							tempor, sunt aliqua put a bird on it squid single-origin coffee
+							nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+							craft beer labore wes anderson cred nesciunt sapiente ea
+							proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+							craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+							probably haven't heard of them accusamus labore sustainable VHS.</div>
 					</div>
 				</div>
-			</div>
-		</c:forEach>
-	</div>
-	</section>
 
-	<%-- 	<section class="container">
-	<div class="row">
-		<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-			<div class="thumbnail">
-				<div class="caption">
-					<h3>${product.name}</h3>
-					<p>${product.description}</p>
-					<p>${product.unitPrice}USD</p>
-					<p>Available ${product.unitsInStock} units in stock</p>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
+
 	</div>
-	</section> --%>
+	</div>
 
 </body>
 </html>
-

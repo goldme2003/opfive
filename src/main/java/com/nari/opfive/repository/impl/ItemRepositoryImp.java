@@ -18,7 +18,7 @@ import com.nari.opfive.repository.ItemRepository;
 @Repository
 public class ItemRepositoryImp implements ItemRepository{
 	
-	Configuration config = new Configuration().configure();
+	Configuration config = new Configuration().configure("hibernate.cfg.xml");
 	SessionFactory sessionfact = config.buildSessionFactory();
 	Session session = sessionfact.openSession();
 
@@ -27,6 +27,11 @@ public class ItemRepositoryImp implements ItemRepository{
 	    String rootItemSql = "select * from rootasseitem";
 	    NativeQuery<Rootasseitem> query = session.createNativeQuery(rootItemSql, Rootasseitem.class);
 	    List<Rootasseitem> rootitemlist = query.getResultList();
+	    if(rootitemlist != null) {
+	    	System.out.println("loading data completed!!");
+	    }
+	    session.close();
+	    	    
 	    
 		return rootitemlist;
 	}
