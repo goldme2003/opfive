@@ -1,6 +1,9 @@
 package com.nari.opfive.service.impl;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +27,27 @@ public class TransfAssessItemServiceImpl implements TransformerAssessmentItemSer
 
 	@Override
 	public List<Judgementitem> getSecondaryItems(int rootItemID) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<Integer, List<Judgementitem>> itemMap = new HashMap<Integer, List<Judgementitem>>();
+		List<Judgementitem> jItemList = new ArrayList<Judgementitem>();
+		for(Rootasseitem rItem : itemrep.getAllRootItems()) {
+			if(rItem.getRootAsseItemId() == rootItemID) {
+				itemMap = itemrep.getRootRelatItems(rItem);
+				jItemList = itemMap.get(rItem.getRootAsseItemId());
+				
+				break;
+				
+			}
+		}
+		
+		return jItemList;
+	
+	}
+
+	@Override
+	public Map<String, List<Judgementitem>> getAllItems() {
+
+
+		return itemrep.getAllItems();
 	}
 
 }

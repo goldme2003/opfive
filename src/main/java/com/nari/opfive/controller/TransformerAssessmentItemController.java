@@ -15,13 +15,13 @@ import com.nari.opfive.domain.Rootasseitem;
 import com.nari.opfive.service.TransformerAssessmentItemService;
 
 @Controller
-@RequestMapping("/item")
+@RequestMapping(value = "/item")
 public class TransformerAssessmentItemController {
 	
-//	@Autowired
-//	private TransformerAssessmentItemService transAsseItemServ;
+	@Autowired
+	private TransformerAssessmentItemService transAsseItemServ;
 	
-	
+	@RequestMapping()
 	public ModelAndView rootItemList(Model model) {
 		
 		List<Rootasseitem> testRootitemList = new ArrayList<Rootasseitem>();
@@ -49,7 +49,7 @@ public class TransformerAssessmentItemController {
 		ModelAndView mav = new ModelAndView();
 		
 //		mav.addObject("rootitem", transAsseItemServ.getPrimaryItems());
-		mav.addObject("rootitem", testRootitemList);
+		mav.addObject("alllevitems", transAsseItemServ.getAllItems());
 		mav.setViewName("main");
 		
 		

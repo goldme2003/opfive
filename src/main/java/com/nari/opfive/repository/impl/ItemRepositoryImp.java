@@ -30,7 +30,7 @@ public class ItemRepositoryImp implements ItemRepository{
 	    if(rootitemlist != null) {
 	    	System.out.println("loading data completed!!");
 	    }
-	    session.close();
+//	    session.close();
 	    	    
 	    
 		return rootitemlist;
@@ -46,6 +46,33 @@ public class ItemRepositoryImp implements ItemRepository{
 		rootJudgeMap.put(rootItemId, judgeItemList);
 		
 		return rootJudgeMap;
+	}
+
+	@Override
+	public Map<String, List<Judgementitem>> getAllItems() {
+		
+		Map<String, List<Judgementitem>> itemMap = new HashMap<String, List<Judgementitem>>();
+	    String rootItemSql = "select * from rootasseitem";
+	    NativeQuery<Rootasseitem> query = session.createNativeQuery(rootItemSql, Rootasseitem.class);
+	    List<Rootasseitem> rootitemlist = query.getResultList();
+	    if(rootitemlist != null) {
+	    	System.out.println("loading data completed,and ready for combining into items map!!");
+	    }
+	    
+	    for(Rootasseitem rootItem : rootitemlist) {
+			String rootItemName = rootItem.getRootAsseItemName();
+			int rootItemId = rootItem.getRootAsseItemId();
+
+			String judgeItemsql = "select * from judgementitem where RootAsseItemID = " + String.valueOf(rootItemId);
+			NativeQuery<Judgementitem> rootJudgeItem = session.createNativeQuery(judgeItemsql, Judgementitem.class);
+			itemMap.put(rootItemName, rootJudgeItem.getResultList());
+	    	
+	    }
+	    
+	    return itemMap;
+	    
+
+
 	}
 
 }

@@ -12,6 +12,8 @@ public interface ItemRepository {
 	
 	public Map<Integer, List<Judgementitem>> getRootRelatItems(Rootasseitem rootitem);
 	
+	public Map<String, List<Judgementitem>> getAllItems();
+	
 	
 	
 
