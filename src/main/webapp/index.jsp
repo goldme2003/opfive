@@ -8,13 +8,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/stylesheets/css/bootstrap.css">
 
 
-<script type="text/javascript" src="resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="resources/js/angular.min.js"></script>
-<script type="text/javascript" src="resources/js/controller.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/javascripts/angular.min.js"></script>
+<script type="text/javascript" src="resources/javascripts/controller.js"></script>
 <title>精益化评估系统</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
 
 		<div class="collapse navbar-collapse" id="nav-toggle">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/">首页</a></li>
+				<li class="active"><a href="item">首页</a></li>
 				<li><a href="/add">登录</a></li>
 			</ul>
 			<form class="navbar-form navbar-right" role="search">
