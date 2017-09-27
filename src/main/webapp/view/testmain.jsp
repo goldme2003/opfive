@@ -8,14 +8,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/stylesheets/css/bootstrap.css">
 
 
-<script type="text/javascript" src="resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="resources/js/angular.min.js"></script>
-<script type="text/javascript" src="resources/js/angular-ui-router.js"></script>
-<script type="text/javascript" src="resources/js/itemrouter.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/javascripts/angular.min.js"></script>
+<script type="text/javascript" src="resources/javascripts/angular-ui-router.js"></script>
+<script type="text/javascript" src="resources/javascripts/itemrouter.js"></script>
 <title>精益化评估系统main</title>
 </head>
 <body ng-app="itemr">

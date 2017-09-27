@@ -22,7 +22,7 @@ public class ItemRepositoryImp implements ItemRepository{
 	SessionFactory sessionfact = config.buildSessionFactory();
 	Session session = sessionfact.openSession();
 
-	@Override
+	
 	public List<Rootasseitem> getAllRootItems() {
 	    String rootItemSql = "select * from rootasseitem";
 	    NativeQuery<Rootasseitem> query = session.createNativeQuery(rootItemSql, Rootasseitem.class);
@@ -36,7 +36,7 @@ public class ItemRepositoryImp implements ItemRepository{
 		return rootitemlist;
 	}
 
-	@Override
+	
 	public Map<Integer, List<Judgementitem>> getRootRelatItems(Rootasseitem rootitem) {
 		Map<Integer, List<Judgementitem>> rootJudgeMap = new HashMap<Integer, List<Judgementitem>>();
 		int rootItemId = rootitem.getRootAsseItemId();
@@ -48,7 +48,7 @@ public class ItemRepositoryImp implements ItemRepository{
 		return rootJudgeMap;
 	}
 
-	@Override
+	
 	public Map<String, List<Judgementitem>> getAllItems() {
 		
 		Map<String, List<Judgementitem>> itemMap = new HashMap<String, List<Judgementitem>>();

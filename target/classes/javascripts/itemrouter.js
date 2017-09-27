@@ -7,8 +7,8 @@ var itemrouter = angular.module('itemr',['ui.router']);
 itemrouter.config(function($stateProvider){
 	var state1 = {
 			name:'stateone',
-			url:'/hello',
-			templateUrl:'view/19.jsp'
+			/*url:'/hello',*/
+			templateUrl:'view/hello.jsp'
 	}
 	
 	var state2 = {

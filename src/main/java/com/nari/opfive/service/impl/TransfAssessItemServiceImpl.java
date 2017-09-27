@@ -19,13 +19,13 @@ public class TransfAssessItemServiceImpl implements TransformerAssessmentItemSer
 	@Autowired
 	private ItemRepository itemrep;
 
-	@Override
+	
 	public List<Rootasseitem> getPrimaryItems() {
 		
 		return itemrep.getAllRootItems();
 	}
 
-	@Override
+	
 	public List<Judgementitem> getSecondaryItems(int rootItemID) {
 		Map<Integer, List<Judgementitem>> itemMap = new HashMap<Integer, List<Judgementitem>>();
 		List<Judgementitem> jItemList = new ArrayList<Judgementitem>();
@@ -43,7 +43,7 @@ public class TransfAssessItemServiceImpl implements TransformerAssessmentItemSer
 	
 	}
 
-	@Override
+	
 	public Map<String, List<Judgementitem>> getAllItems() {
 
 
