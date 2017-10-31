@@ -8,7 +8,10 @@ import com.nari.opfive.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nari.opfive.domain.Rootasseitem;
@@ -55,7 +58,15 @@ public class TransformerAssessmentItemController {
 		
 		return mav;
 		
-	} 
+	}
+	
+	@RequestMapping(value="/subitem/{subItemId}", method = RequestMethod.GET)
+	public @ResponseBody List<Judgementsubitem>  getSubItemList(@PathVariable(value="subItemId") String subItemId, Model subItemModel) {
+		//subItemModel.addAttribute("subItemId", subItemId);
+		System.out.println("RESTful service started.");
+		return transAsseItemServ.getSubItems(Integer.valueOf(subItemId));
+		
+	}
 
 
 }

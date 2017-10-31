@@ -285,17 +285,22 @@
 						<ul class="nav" id="main-nav">
 							<li class="active-item"><a href="index.jsp"><i
 									class="fa fa-home" aria-hidden="true"></i><span>返回主页</span></a></li>
+									<li><a ui-sref="state2">测试连接</a></li>
 
 							<c:forEach items="${requestScope.alllevitems}" var="item">
 								<li class="has-child-item close-item"><a><i
 										class="fa fa-info" aria-hidden="true"></i><span>${item.key}</span></a>
 									<ul class="nav child-nav level-1">
 										<c:forEach items="${item.value}" var="juditem">
-											<li><a ui-sref="stateone">${juditem.judgeItemName}</a></li>
-
+										<!-- used code -->
+											<%-- <li><a ui-sref="state${juditem.judgeItemId}">${juditem.judgeItemName}</a></li> --%>
+										<!-- --------- -->
+											<li><a ui-sref="state1({judItemId:${juditem.judgeItemId}})">${juditem.judgeItemName}</a></li>
 										</c:forEach>
+										
 									</ul>
 							</c:forEach>
+							
 
 
 
@@ -338,107 +343,16 @@
 
 			</div>
 			<div class="content">
-				<div class="content-header">
-					<div class="leftside-content-header">
-						<ul class="breadcrumbs">
-							<li><i class="fa fa-home" aria-hidden="true"></i><a href="#">油浸式变压器</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row animated fadeInUp">
-				<ui-view> </ui-view>
-				
-				
-<!-- 					<div class="panel">
-						<div class="panel-content">
-							<div class="row">
-								<div class="col-md-12">
-									<h5>
-										<b>Justified</b> tabs
-									</h5>
-									<p>
-										Add the class <span class="code">.nav-justified</span> to the
-										div<span class="code">.nav-tabs</span>
-									</p>
-									<div class="tabs">
-										<ul class="nav nav-tabs nav-justified">
-											<li class="active"><a href="#home2" data-toggle="tab">Home</a></li>
-											<li><a href="#profile2" data-toggle="tab">Profile</a></li>
-											<li><a href="#messages2" data-toggle="tab">Messages</a></li>
-											<li><a href="#settings2" data-toggle="tab"><i
-													class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
-										</ul>
-										<div class="tab-content">
-											<div class="tab-pane fade in active" id="home2">
-												<p>
-													<b>Home</b> content
-												</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-													elit. Maecenas vitae tellus tincidunt, mattis odio eu,
-													accumsan quam. Duis ultricies, erat nec suscipit mattis,
-													risus est efficitur enim, sed finibus lacus nisi et mauris.
-													Ut sed accumsan ipsum. Aliquam vel nibh et turpis euismod
-													porttitor. In diam odio, cursus eget faucibus quis,
-													efficitur id erat. Aliquam euismod in justo sit amet
-													ornare. Quisque eu fringilla libero. Donec iaculis sit amet
-													nibh non laoreet.</p>
-											</div>
-											<div class="tab-pane fade" id="profile2">
-												<p>
-													<b>Profile</b> content
-												</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-													elit. Maecenas vitae tellus tincidunt, mattis odio eu,
-													accumsan quam. Duis ultricies, erat nec suscipit mattis,
-													risus est efficitur enim, sed finibus lacus nisi et mauris.
-													Ut sed accumsan ipsum. Aliquam vel nibh et turpis euismod
-													porttitor. In diam odio, cursus eget faucibus quis,
-													efficitur id erat. Aliquam euismod in justo sit amet
-													ornare. Quisque eu fringilla libero. Donec iaculis sit amet
-													nibh non laoreet.</p>
-											</div>
-											<div class="tab-pane fade" id="messages2">
-												<p>
-													<b>Message</b> content
-												</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-													elit. Maecenas vitae tellus tincidunt, mattis odio eu,
-													accumsan quam. Duis ultricies, erat nec suscipit mattis,
-													risus est efficitur enim, sed finibus lacus nisi et mauris.
-													Ut sed accumsan ipsum. Aliquam vel nibh et turpis euismod
-													porttitor. In diam odio, cursus eget faucibus quis,
-													efficitur id erat. Aliquam euismod in justo sit amet
-													ornare. Quisque eu fringilla libero. Donec iaculis sit amet
-													nibh non laoreet.</p>
-											</div>
-											<div class="tab-pane fade" id="settings2">
-												<p>
-													<b>Settings</b> content
-												</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-													elit. Maecenas vitae tellus tincidunt, mattis odio eu,
-													accumsan quam. Duis ultricies, erat nec suscipit mattis,
-													risus est efficitur enim, sed finibus lacus nisi et mauris.
-													Ut sed accumsan ipsum. Aliquam vel nibh et turpis euismod
-													porttitor. In diam odio, cursus eget faucibus quis,
-													efficitur id erat. Aliquam euismod in justo sit amet
-													ornare. Quisque eu fringilla libero. Donec iaculis sit amet
-													nibh non laoreet.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> -->
-
-				</div>
+			<ui-view></ui-view>
 			</div>
+			
+
 
 		</div>
 	</div>
 	<script src="resources/jQuery/jquery-3.2.1.js"></script>
-	<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- <script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+	<script src="resources/vendor/bootstrap/js/bootstrap.js"></script>
 	<script src="resources/javascripts/angular.min.js"></script>
 	<script src="resources/javascripts/angular-ui-router.js"></script>
 	<script src="resources/javascripts/itemrouter.js"></script>

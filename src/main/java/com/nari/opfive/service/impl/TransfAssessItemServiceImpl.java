@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nari.opfive.domain.Judgementitem;
+import com.nari.opfive.domain.Judgementsubitem;
 import com.nari.opfive.domain.Rootasseitem;
 import com.nari.opfive.repository.ItemRepository;
 import com.nari.opfive.service.TransformerAssessmentItemService;
@@ -48,6 +49,13 @@ public class TransfAssessItemServiceImpl implements TransformerAssessmentItemSer
 
 
 		return itemrep.getAllItems();
+	}
+
+
+	
+	public List<Judgementsubitem> getSubItems(int judItemID) {
+		
+		return itemrep.getSubJudItems(judItemID);
 	}
 
 }

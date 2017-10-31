@@ -12,6 +12,7 @@ import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
 
 import com.nari.opfive.domain.Judgementitem;
+import com.nari.opfive.domain.Judgementsubitem;
 import com.nari.opfive.domain.Rootasseitem;
 import com.nari.opfive.repository.ItemRepository;
 
@@ -73,6 +74,23 @@ public class ItemRepositoryImp implements ItemRepository{
 	    
 
 
+	}
+
+
+	@Override
+	public List<Judgementsubitem> getSubJudItems(int judItemId) {
+		
+		
+		String subJudItemSql = "select * from judgementsubitem where JudgeItemID = " + String.valueOf(judItemId);
+		NativeQuery<Judgementsubitem> subItemquery = session.createNativeQuery(subJudItemSql, Judgementsubitem.class);
+		List<Judgementsubitem> judSubItemList = subItemquery.getResultList();
+		
+		if(judSubItemList != null) {
+			System.out.println("load sub-judgement Item of judgement id="+judItemId+" is completed.");
+			
+		}
+		
+		return judSubItemList;
 	}
 
 }

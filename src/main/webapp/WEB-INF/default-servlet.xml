@@ -26,14 +26,14 @@
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="10240000"></property>
-	</bean>
+	</bean>-->
 
  	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="defaultViews">
 			<list>
 				<ref bean="jsonView" />
-				<ref bean="xmlView" />
+				<!-- <ref bean="xmlView" /> -->
 			</list>
 		</property>
 	</bean>
@@ -43,7 +43,7 @@
 		<property name="prettyPrint" value="true" />
 	</bean>
 
-	<bean id="xmlView"
+<!-- 	<bean id="xmlView"
 		class="org.springframework.web.servlet.view.xml.MarshallingView">
 		<constructor-arg>
 			<bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
@@ -54,12 +54,12 @@
 				</property>
 			</bean>
 		</constructor-arg>
-	</bean>	
+	</bean>	 -->
 	
-	<bean id="validator"
+<!-- 	<bean id="validator"
 	class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
 	<property name="validationMessageSource" ref="messageSource" />
-</bean> -->
+</bean>  -->
 	
 	
 
