@@ -82,6 +82,7 @@ itemrouter.config(function($stateProvider){
 
 itemrouter.controller('itemcontroller', function($scope, post){
 	var testname = [1,2,3,4];
+	this.post = post;
 	$scope.post = post;
 	console.log(post);
 	console.log($scope.post);
