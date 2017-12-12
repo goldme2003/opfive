@@ -35,6 +35,7 @@
 		<div class="collapse navbar-collapse" id="nav-toggle">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="item">首页</a></li>
+				<li class="active"><a href="insertitem">插入通则</a></li>
 				<li><a href="/add">登录</a></li>
 			</ul>
 			<form class="navbar-form navbar-right" role="search">
